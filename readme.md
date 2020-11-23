@@ -20,7 +20,10 @@ task mariadb:install
 # apply provided sql manually
 task mariadb:client
 
+# OR single build
 (cd apps && task install)
+# OR build and watch
+(cd apps && tilt up)
 
 # optional
 task webui
