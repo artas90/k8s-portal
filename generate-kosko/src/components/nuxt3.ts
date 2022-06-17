@@ -80,4 +80,9 @@ const ingress = new Ingress({
   }
 });
 
-export default [deployment, service, ingress];
+const resources = [deployment, service, ingress];
+resources.forEach(it => {
+  it.metadata!.namespace = APP.Namespace;
+});
+
+export default resources;
